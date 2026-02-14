@@ -1,57 +1,33 @@
-.bodyclass{
-    background-color: #151515;
-}
-
+/* 1. Global Reset & Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-h3{
-  color: #FFB400;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: #f8f8f8; /* Light background from screenshot */
   padding: 20px;
   font-family: 'Inter', sans-serif;
 }
 
+/* 2. Desktop Navigation Layout */
 .burger-nav {
-  background-color: #151515;
+  background-color: #151515; /* Primary dark background */
   display: flex;
   align-items: center;
   padding: 30px 40px;
-  border-radius: 40px 40px 0 0; 
+  border-radius: 40px 40px 0 0; /* Distinctive rounded top corners */
   width: 100%;
-  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media (max-width: 600px) {
-  .burger-nav {
-    padding: 20px; /* Reduces the outer padding for smaller screens */
-  }
-
-  .nav-links {
-    width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents text from wrapping to the next line */
-    gap: 40px; /* Slightly reduces the space between items */
-    padding-bottom: 5px; /* Adds a little space so the scrollbar doesn't overlap text */
-    -webkit-overflow-scrolling: touch; /* Makes scrolling smooth on iOS */
-  }
-
-  /* Optional: Hide the scrollbar for a cleaner look */
-  .nav-links::-webkit-scrollbar {
-    display: none;
-  }
-  .nav-links {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}
 .nav-links {
   display: flex;
   gap: 30px;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -61,16 +37,21 @@ body {
   font-weight: 700;
   font-size: 18px;
   position: relative;
+  transition: opacity 0.2s ease;
 }
 
+.nav-item:hover {
+  opacity: 0.8;
+}
 
-/* Specific yellow for Promotions */
+/* 3. Specific Styling from Screenshots */
+/* The gold/yellow color for Promotions */
 .nav-item.highlight {
-  color: #FFB400;
+  color: #FFB400; /* Sampled hex code #FFB400 */
   text-transform: uppercase;
 }
 
-/* Active underline for Menu */
+/* The yellow underline for the active Menu item */
 .nav-item.active::after {
   content: '';
   position: absolute;
@@ -79,4 +60,36 @@ body {
   width: 100%;
   height: 3px;
   background-color: #FFB400;
+}
+
+/* 4. Mobile View Compatibility (Media Query) */
+@media (max-width: 600px) {
+  .burger-nav {
+    padding: 20px 15px;
+    border-radius: 25px 25px 0 0; /* Slightly smaller radius for mobile screens */
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal swiping */
+    white-space: nowrap; /* Keeps items on one line */
+    gap: 20px;
+    padding-bottom: 10px; /* Space for the active underline */
+    
+    /* Smooth scrolling for touch devices */
+    -webkit-overflow-scrolling: touch;
+    
+    /* Hiding scrollbars for a clean look */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  /* Hiding scrollbars for Chrome/Safari/Opera */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    font-size: 16px; /* Optimized text size for mobile */
+  }
 }
