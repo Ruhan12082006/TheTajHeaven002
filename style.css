@@ -4,6 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+h3{
+  color: #FFB400;
+  text-align: center;
+}
+
 body {
   background-color: #f8f8f8;
   padding: 20px;
@@ -14,8 +19,11 @@ body {
   background-color: #151515;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 30px 40px;
   border-radius: 40px 40px 0 0; 
+  width: 100%;
+  position: relative;
 }
 
 .nav-links {
@@ -30,6 +38,13 @@ body {
   font-weight: 700;
   font-size: 18px;
   position: relative;
+
+}
+
+.nav-item01{
+    position:absolute;
+    left: 100px;
+
 }
 
 /* Specific yellow for Promotions */
