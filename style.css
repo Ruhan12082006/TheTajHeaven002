@@ -12,6 +12,12 @@ body {
   padding: 20px;
   font-family: 'Inter', sans-serif;
 }
+h3{
+    color: #FFB400;
+}
+.nav-item1{
+  color: #FFB400;
+}
 
 /* 2. Desktop Navigation Layout */
 .burger-nav {
