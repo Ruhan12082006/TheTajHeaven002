@@ -63,3 +63,12 @@ body {
   height: 3px;
   background-color: #FFB400;
 }
+
+@media (max-width: 600px) {
+
+      /* CSS for screens below or equal to 600px wide */
+      .burger-nav {
+        height: 200px;
+        width: 200px;
+      }
+    }
