@@ -19,16 +19,39 @@ body {
   background-color: #151515;
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 30px 40px;
   border-radius: 40px 40px 0 0; 
   width: 100%;
   position: relative;
 }
 
+@media (max-width: 600px) {
+  .burger-nav {
+    padding: 20px; /* Reduces the outer padding for smaller screens */
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    gap: 40px; /* Slightly reduces the space between items */
+    padding-bottom: 5px; /* Adds a little space so the scrollbar doesn't overlap text */
+    -webkit-overflow-scrolling: touch; /* Makes scrolling smooth on iOS */
+  }
+
+  /* Optional: Hide the scrollbar for a cleaner look */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-links {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 .nav-links {
   display: flex;
   gap: 30px;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -38,14 +61,8 @@ body {
   font-weight: 700;
   font-size: 18px;
   position: relative;
-
 }
 
-.nav-item01{
-    position:absolute;
-    left: 10px;
-
-}
 
 /* Specific yellow for Promotions */
 .nav-item.highlight {
@@ -63,12 +80,3 @@ body {
   height: 3px;
   background-color: #FFB400;
 }
-
-@media (max-width: 600px) {
-
-      /* CSS for screens below or equal to 600px wide */
-      .burger-nav {
-        height: 200px;
-        width: 200px;
-      }
-    }
