@@ -102,7 +102,7 @@ header {
 .image-wrapper {
     position: relative;
     width: 100%; /* Pushes image down so top of text is visible */
-    padding-top: 60px;
+    padding-top: 100px;
 }
 
 .product-img {
